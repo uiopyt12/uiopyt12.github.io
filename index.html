@@ -1,14 +1,58 @@
-<!-- index.html -->
-
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹 호스팅</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오 장난 메시지</title>
+
+  <!-- 카카오 JavaScript SDK -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #fee500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
+
 <body>
-    git pages 입니다.
+
+  <h1>📢 중간고사 패스권 도착!?</h1>
+  <p>친구에게 카카오톡 장난 메시지를 보내보세요 😆</p>
+
+  <button onclick="sendFoolMessage()">
+    카카오톡으로 공유하기
+  </button>
+
+  <script>
+    // 카카오 JavaScript 키
+    Kakao.init("e08a63851953be9dd9c1c56593510804");
+
+    console.log("Kakao 초기화:", Kakao.isInitialized());
+
+    function sendFoolMessage() {
+      Kakao.Link.sendCustom({
+        templateId: 137361
+      });
+    }
+  </script>
+
 </body>
 </html>
-출처: https://devyihyun.tistory.com/203 [이롭게 현명하게:티스토리]
+```
